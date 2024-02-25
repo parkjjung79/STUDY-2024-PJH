@@ -6,16 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 탭에ㅔ 출력되는 타이틀 -->
     <title>네이버 요약뉴스</title>
+    <!-- CSS 인터널방식 코드 -->
+    <style>
+        /* CSS코딩구역 */
+        /* 
+            CSS 설정 코딩방식
+            
+            선택자{
+                속성:값;
+            }
+            
+            -> 선택자는 요소명 / 클래스명 / 아이디명 등으로 사용
+        
+            [ CSS 박스모델 ]
+            - 모든 html요소는 사각형으로 되어 있고
+            가로, 세로, 패딩, 마진, 보더의 속성으로 구성됨
+            width/height/padding/margin/border
+            -> 기본박스 디자인은 가로, 세로크기를 줄 경우
+            패딩과 보더는 박스 크기에 포함되지 않는다!
+            ->>> 이런 박스를 컨텐트박스라고 함!
+        
+        */
+
+
+        /* 공통 디자인 : 클래스를 주로 사용함! */
+        .part{
+            /* 박스모델 5가지 셋팅 */
+            /* 가로크기 - 기본값 auto 
+            블록의 기본값은 부모박스 채우기
+            인라인의 기본값은 내용물만큼 */
+            width: 750px;
+            /* 세로크기 - 기본값 auto
+            모든 요소에서 기본값은 내용물만큼! 
+            안주면 기본값 auto로 설정됨 */
+            /* height: 300px; */
+            /* height: auto; */
+            border: 1px solid #000;
+            /* 패딩 - 안쪽여백
+                padding: 수치; (4방향 모두)
+                padding: 수치 수치; (위아래 양쪽)
+                padding: 수치 수치 수치; (위 양쪽 아래)
+                padding: 수치 수치 수치 수치; (위 오른 아래 왼)
+            */
+            padding: 50px;
+
+            /* 박스가 패딩, 보더를 포함하는 설정 */
+            box-sizing: border-box;
+
+            /* content-box가 기본값임 */
+            /* box-sizing: content-box; */
+
+            /* 마진 
+                margin: 수치; (4방향 모두)
+                margin: 수치 수치; (위아래 양쪽)
+                margin: 수치 수치 수치; (위 양쪽 아래)
+                margin: 수치 수치 수치 수치; (위 오른 아래 왼)
+
+
+                [ 블록박스 가로방향 중앙정렬 마진 설정 ]
+                마영오! -> 블록박스를 중앙에 와라라는 주문
+                margin: 0 auto;
+            */
+            margin: 20px auto;
+
+        }
+
+        /* 메인 이미지 크기 변경하기 */
+        /* 띄어쓰기는 main 태그 밑 모든 img를 선택하라는 뜻 */
+        main#main-area img{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <!-- 1. 상단영역 : 제목, 메뉴 -->
-    <div id="top-area" class="part">
+    <header id="top-area" class="part">
         <!-- 1-1. 타이틀 -->
         <h1 class="tit">네이버 요약뉴스</h1>
         <!-- 1-2. 메뉴 -->
         <div class="menu">
             <a href="#">
-                <img src="./images/logo.png" alt="네이버로고">
+                <img src="./images/logo.png" alt="네이버로고" style="width: 50px; vertical-align: middle;">
+                <!-- style속성으로 개별요소에 CSS를 설정할 수 있다!
+                이런 방식을 인라인방식이라고 함 -->
             </a>
             <a href="">정치</a>
             <a href="">경제</a>
@@ -23,17 +96,35 @@
             <a href="">IT/과학</a>
             <a href="">TV/연예</a>
         </div>
-    </div>
+    </header>
     <!-- 2. 메인영역 : 컨텐츠 -->
-    <div id="main-area" class="part">
-
-    </div>
+    <main id="main-area" class="part">
+        <img src="./images/main_news.jpg" alt="메인이미지">
+    </main>
     <!-- 3. 하단영역 :  회사정보 -->
-    <div id="info-area" class="part">
-
-    </div>
+    <footer id="info-area" class="part">
+        <!-- address : 주소, 전화번호, 대표자 등을 포함하는 시멘틱 태그 -->
+        <address>
+            서울시 송파구 가락로21길 30 <br>
+            대표: PARK <br>
+            전화: 02-1234-1234 
+        </address>
+    </footer>
 
     <!-- 
+
+        [ 이름규칙 ]
+        1. 파스칼 케이스 : JS에서 사용
+                PascalCase -> 단어마다 대문자
+        2. 캐믈 케이스 : JS에서 사용
+                camelCase -> 첫단어빼고 단어마다 대문자
+        3. 스네이크 케이스 : 파일명/폴더명
+                snake_case -> 모두 소문자고 단어사이 언더바
+        4. 케밥 케이스 : 요소명
+                kebap-case -> 모두 소문자고 단어사이 데쉬
+
+
+
         [ 요소 명명법 ]
         1. 아이디는 #, 클래스는 . (약어로 만들기)
         2. 이름은 구체적으로 만들고 단어마다 데쉬(-)를 사용함(케밥케이스)
@@ -52,9 +143,60 @@
         - 필수속성
             1) src : 이미지경로
             2) alt : 대체텍스트(웹접근성 필수)
+            -> alternative text
+            alternative : 대안, 선택 가능한 것
         
         [ 웹접근성 참조 ]
         https://www.wah.or.kr
+
+        [ 웹표준이란? ]
+        - 모든 브라우저에서 하나의 소스로 동일한 디스플레이 및 기능이
+        작동하도록 정한 웹 코딩의 표준안이다!
+
+        [ 웹접근성이란? ]
+        - 평등의 원칙! 즉, 장애인 차별금지법에 따라 이미지(alt속성), 동영상(자막) 등에 설명을 추가하여 정보제공에 차별이 없도록 하는 것!
+
+        [ 레이아웃을 위한 블록요소 ]
+        div : 영역을 나누고 묶어주는 요소
+        (divide/division - 블록요소)
+
+        [ HTML5에서 등장하는 div 친구들 ]
+        - div에 내용을 구분하는 이름을 지어줌
+        - 의미가 있는 요소를 시멘틱(sementic)태그라고 함!
+        sementic : 의미의, 의미론적인
+        1. header : 머릿부분
+        2. footer : 아랫부분
+        3. main : 메인부분(한 번만 사용가능!)
+        4. nav : 네비게이션 부분
+        5. aside : 부가정보
+        6. sesction : 내용구분파트
+        7. article(기사나 논문) : 독립된 내용구분파트
+        ( section/aritcle 내부에 h1~h6 태그사용권고)
+
+        참고) 요소와 태그는 무엇이 다른가?
+        요소(element)는 공통적인 성질을 이룰때 사용
+        태그(tag)는 구체적인요소를 사용할 때 지칭하는 말
+
+        [ 한 페이지에서 한 번만 쓰는 요소 ]
+        html / head / body / main
+
+        [ 닫는 태그 없이 홀로쓰는 요소 ]
+        br / img
+
+        [ 웹에서 경로 지정하기 ]
+        1. 상대경로 : 현재파일 위치에서 파악되는 경로
+        1) ./ - 현재위치(또는 쓰지 않고 바로)
+        2) ../ - 상위폴더로 이동
+
+        2. 절대경로 : http부터 쓰는 웹경로
+
+        3. 절대상대경로 :  웹 사이트 루트부터의 경로
+        -> 슬래쉬(/)부터 씀
+
+        -> 주의 : 절대상대경로는 서버 루트폴더가 같지
+        않으면 경로가 망가짐. 또는 로컬에서 직접 웹 페이지를
+        열어도 깨짐!
+
      -->
     
 </body>
