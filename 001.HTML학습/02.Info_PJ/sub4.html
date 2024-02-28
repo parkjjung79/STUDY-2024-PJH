@@ -9,7 +9,7 @@
     <!-- CSS 인터널방식 코드 -->
     <style></style>
     <!-- CSS 익스터널방식 코드 -->
-    <link rel="stylesheet" href="./css/sub.css">
+    <link rel="stylesheet" href="./css/sub.css" />
   </head>
   <body>
     <!-- 1. 상단영역 : 제목, 메뉴 -->
@@ -18,28 +18,70 @@
       <h1 class="tit">네이버 요약뉴스 - IT/과학 뉴스</h1>
       <!-- 1-2. 메뉴 -->
       <nav class="menu">
-          <a href="./index.html">
-            <img
-              src="./images/logo_bgnone.png"
-              alt="네이버로고"
-              style="width: 50px; vertical-align: middle"
-            />
-            <!-- style속성으로 개별요소에 CSS를 설정할 수 있다!
+        <a href="./index.html">
+          <img
+            src="./images/logo_bgnone.png"
+            alt="네이버로고"
+            style="width: 50px; vertical-align: middle"
+          />
+          <!-- style속성으로 개별요소에 CSS를 설정할 수 있다!
                   이런 방식을 인라인방식이라고 함 -->
-          </a>
-          <a href="sub1.html">정치</a> |
-          <a href="sub2.html">경제</a> |
-          <a href="sub3.html">사회</a> |
-          <a href="sub4.html">IT/과학</a> |
-          <a href="sub5.html">TV/연예</a>
+        </a>
+        <a href="sub1.html">정치</a> | <a href="sub2.html">경제</a> |
+        <a href="sub3.html">사회</a> | <a href="sub4.html">IT/과학</a> |
+        <a href="sub5.html">TV/연예</a>
       </nav>
     </header>
-    
+
     <!-- 2. 메인영역 : 컨텐츠 -->
     <main id="main-area" class="part">
       <!-- 2-1. 서브 타이틀 -->
       <h2 class="sub-title">IT/과학 뉴스</h2>
+      <!-- 2-2. 언론사로고 -->
+      <div class="press-logo">
+        <img src="./images/press_logo4.png" alt="경향신문" />
+      </div>
+      <!-- 2-3. 기사제목 -->
+      <h3 class="article-title">
+        갤럭시 S24 국내 판매 100만대 돌파···출시 28일 만
+      </h3>
+      <!-- 2-4. 기사사진 -->
+      <figure class="article-picture">
+        <!-- 이미지 -->
+        <img src="./images/sub5_img.jpg" alt="IT/과학기사이미지" />
+        <!-- 이미지설명 -->
+        <figcaption>
+          삼성전자의 신형 플래그십 스마트폰 갤럭시 S24 시리즈가 공식 출시된
+          지난달 31일 서울 삼성 강남을 찾은 시민이 S24 시리즈를 살피고
+          있다.연합뉴스
+        </figcaption>
+      </figure>
+      <!-- 
+          [ figure 요소 ]
+          - 이미지나 표를 포함하는 박스요소
+          - 이미지설명은 하위요소인 figcaption을 사용함
+            (설명이 필요없으면 생략한다!)
+        -->
 
+      <!-- 2-5. 기사내용 -->
+      <section>
+        <p>
+          삼성전자는 인공지능(AI) 기능을 담은 ‘갤럭시 S24 시리즈’의 국내
+          판매량이 출시 28일 만에 100만대를 돌파했다고 28일 밝혔다. 역대 갤럭시
+          S 시리즈 가운데 가장 짧은 기간이다.
+        </p>
+        <p>
+          지난달 31일 출시된 갤럭시 S24 시리즈는 전날인 27일 기준 100만대를
+          돌파했다. 28일 만에 100만대 판매를 넘긴 것으로, 이는 전작인 갤럭시
+          S23에 비해 약 3주 빠른 속도이다. S 시리즈 외에 다른 갤럭시 스마트폰을
+          모두 포함해도 ‘갤럭시 노트10’의 25일에 이어 두 번째로 빠른 기록이다.
+        </p>
+        <p>
+          삼성전자는 “갤럭시 S24 시리즈의 이 같은 신기록 행진은 새로운 모바일 AI
+          시대를 여는 ‘갤럭시 AI’에 대한 소비자들의 관심과 호응에서 비롯됐다”고
+          자평했다.
+        </p>
+      </section>
     </main>
 
     <!-- 3. 하단영역 :  회사정보 -->
